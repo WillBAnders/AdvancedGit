@@ -1,3 +1,4 @@
+import argparse
 import math
 
 
@@ -6,6 +7,8 @@ def custom_sqrt(number):
     return math.sqrt(number)
 
 
-number = int(input("Enter a number: "))
+parser = argparse.ArgumentParser(description="Calculate the square root of a number")
+parser.add_argument("number", type=int)
+args = parser.parse_args()
 
-print(custom_sqrt(number))
+print(custom_sqrt(args.number))
